@@ -5,4 +5,8 @@ export const Color = {
     60: "#737373",
     100: "#1D1D1D",
   },
+  keoni: {
+    primary: "#8F47FF",
+    background: "#F1ECFE",
+  }
 };
