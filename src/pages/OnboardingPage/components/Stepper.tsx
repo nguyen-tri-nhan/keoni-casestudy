@@ -3,9 +3,9 @@ import {
   Step,
   StepLabel,
   styled,
-  StepConnector,
   stepConnectorClasses,
-  StepIcon,
+  stepIconClasses,
+  stepLabelClasses,
 } from '@mui/material';
 import React from 'react';
 import { Color } from '../../../utils/token';
@@ -15,19 +15,26 @@ type StepperProps = {
   steps: string[];
 };
 
-// const StyledStepConnector = styled(StepConnector)({
-//   [`&:not(.${stepConnectorClasses.disabled})`]: {
-//     [`& .${stepConnectorClasses.line}`]: {
-//       borderColor: Color.keoni.primary,
-//     },
-//   },
-// });
 
 const StepperRoot = styled(MuiStepper)({
   padding: '25px 0',
   [`& :not(.${stepConnectorClasses.disabled})`]: {
     [`& .${stepConnectorClasses.line}`]: {
       borderColor: Color.keoni.primary,
+    },
+  },
+  [`& .${stepLabelClasses.root}`]: {
+    [`& :not(.${stepLabelClasses.disabled})`]: {
+      [`& .${stepIconClasses.root}`]: {
+        fill: Color.keoni.primary,
+      },
+      [`&.${stepLabelClasses.label}`]: {
+        fontWeight: 600,
+        color: Color.keoni.primary,
+      },
+    },
+    [`& .${stepLabelClasses.label}`]: {
+      marginLeft: "1rem",
     },
   },
 });
