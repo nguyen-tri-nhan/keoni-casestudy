@@ -47,6 +47,10 @@ const OnboardingForm: React.FC = () => {
 
 export default OnboardingForm;
 
-const BrandDescriptionsContainer = styled("div")({
+const BrandDescriptionsContainer = styled("div")(({ theme }) => ({
   display: "flex",
-});
+  justifyContent: "space-between",
+  [theme.breakpoints.down("md")]: {
+    flexDirection: "column",
+  },
+}));
