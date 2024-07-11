@@ -2,15 +2,20 @@ import { styled, Typography } from "@mui/material";
 import TitleInfo from "../TitleInfo";
 import BrandDescribe from "./BrandDescribe";
 import { BrandDescriptions, BrandDescriptionValue } from "../../../../utils/constant";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useMemo } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { selectBrandDescription } from "../../../../slice/selectors";
+import { useAppSlice } from "../../../../slice";
 
 const OnboardingForm: React.FC = () => {
 
-  const [brandDescription, setBrandDescription] = useState<BrandDescriptionValue>(BrandDescriptionValue.KEONI_DESCRIBE);
+  const brandDescription = useSelector(selectBrandDescription);
+  const { actions } = useAppSlice();
+  const dispatch = useDispatch();
 
   const onBrandDescribeChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    setBrandDescription(e.target.value as BrandDescriptionValue);
-  }, []);
+    dispatch(actions.setBrandDescription(e.target.value as BrandDescriptionValue));
+  }, [actions, dispatch]);
 
   const renderBrandDescriptionOptions = useMemo(() => {
     return (
@@ -29,11 +34,6 @@ const OnboardingForm: React.FC = () => {
       </BrandDescriptionsContainer>
     );
   }, [brandDescription, onBrandDescribeChange]);
-
-  useEffect(() => {
-    console.log("Brand Description: ", brandDescription);
-  }, [brandDescription]);
-
 
   return (
     <form>
