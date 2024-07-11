@@ -38,6 +38,31 @@ const theme = createTheme({
       lineHeight: "1.3125rem",
       color: Color.grayScale[60],
     }
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: ({ ownerState }) => ({
+          ...(ownerState.variant === 'contained' &&
+            ownerState.color === 'primary' && {
+            backgroundColor: Color.keoni.primary,
+            color: Color.grayScale[10],
+            fontWeight: 600,
+            textTransform: 'none',
+            ':disabled': {
+              backgroundColor: Color.keoni.disable,
+              color: Color.grayScale[10],
+            }
+          }),
+          ...(ownerState.variant === 'text' &&
+            ownerState.color === 'secondary' && {
+            color: Color.grayScale[60],
+            fontWeight: 600,
+            textTransform: 'none',
+          }),
+        }),
+      },
+    },
   }
 });
 

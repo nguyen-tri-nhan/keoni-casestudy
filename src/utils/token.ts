@@ -11,5 +11,6 @@ export const Color = {
   keoni: {
     primary: "#8F47FF",
     background: "#F1ECFE",
+    disable: "#D4BBF7",
   }
 };

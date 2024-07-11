@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 import { selectBrandDescription } from "../../../../slice/selectors";
 import BrandDescriptionsComponent from "./BrandDecriptions";
@@ -28,6 +28,12 @@ const OnboardingForm: React.FC = () => {
       {brandDescription !== BrandDescriptionValue.QUICK_START && (
         <BrandVoiceName />
       )}
+      <Button disabled fullWidth type="submit" variant="contained" color="primary">
+        Save & Next
+      </Button>
+      <Button fullWidth color="secondary">
+        Skip for now
+      </Button>
     </form>
   );
 };
