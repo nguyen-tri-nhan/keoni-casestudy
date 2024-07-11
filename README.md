@@ -1,3 +1,14 @@
+# Keoni.ai
+
+## Challenges faced
+### UI
+- Build from scratch, no reusable component, color tokens exported yet
+
+### Design
+- Missing
+
+### 
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
