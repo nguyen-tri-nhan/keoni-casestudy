@@ -1,56 +1,35 @@
-import { styled, Typography } from "@mui/material";
-import TitleInfo from "../TitleInfo";
-import BrandDescribe from "./BrandDescribe";
-import { BrandDescriptions, BrandDescriptionValue } from "../../../../utils/constant";
-import { useCallback, useMemo } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { Typography } from "@mui/material";
+import { useSelector } from "react-redux";
 import { selectBrandDescription } from "../../../../slice/selectors";
-import { useAppSlice } from "../../../../slice";
+import BrandDescriptionsComponent from "./BrandDecriptions";
+import { BrandDescriptionValue } from "../../../../utils/constant";
+import KeoniDescribe from "./KeoniDescribe";
+import QuickStart from "./QuickStart";
+import SelfDescribe from "./SelfDescribe";
+import BrandVoiceName from "./BrandVoiceName";
+
+const brandDescriptionContent = {
+  [BrandDescriptionValue.QUICK_START]: <QuickStart />,
+  [BrandDescriptionValue.SELF_DESCRIBE]: <SelfDescribe />,
+  [BrandDescriptionValue.KEONI_DESCRIBE]: <KeoniDescribe />,
+};
 
 const OnboardingForm: React.FC = () => {
 
   const brandDescription = useSelector(selectBrandDescription);
-  const { actions } = useAppSlice();
-  const dispatch = useDispatch();
-
-  const onBrandDescribeChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(actions.setBrandDescription(e.target.value as BrandDescriptionValue));
-  }, [actions, dispatch]);
-
-  const renderBrandDescriptionOptions = useMemo(() => {
-    return (
-      <BrandDescriptionsContainer>
-        {Object.values(BrandDescriptions).map(({ value, label }) => {
-          return (
-            <BrandDescribe
-              checked={brandDescription === value}
-              key={value}
-              value={value}
-              label={label}
-              onChange={onBrandDescribeChange}
-            />
-          )
-        })}
-      </BrandDescriptionsContainer>
-    );
-  }, [brandDescription, onBrandDescribeChange]);
 
   return (
     <form>
       <Typography variant="h3">
         Which describe you?
       </Typography>
-      {renderBrandDescriptionOptions}
+      <BrandDescriptionsComponent />
+      {brandDescriptionContent[brandDescription]}
+      {brandDescription !== BrandDescriptionValue.QUICK_START && (
+        <BrandVoiceName />
+      )}
     </form>
   );
 };
 
 export default OnboardingForm;
-
-const BrandDescriptionsContainer = styled("div")(({ theme }) => ({
-  display: "flex",
-  justifyContent: "space-between",
-  [theme.breakpoints.down("md")]: {
-    flexDirection: "column",
-  },
-}));

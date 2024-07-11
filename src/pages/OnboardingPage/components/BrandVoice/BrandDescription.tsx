@@ -9,7 +9,7 @@ type BrandDescribeProps = RadioProps & {
 
 
 
-const BrandDescribe: React.FC<BrandDescribeProps> = ({ value, label, checked, ...props }) => {
+const BrandDescription: React.FC<BrandDescribeProps> = ({ value, label, checked, ...props }) => {
   const Container = styled("div")(({ theme }) => ({
     display: "flex",
     alignItems: "center",
@@ -51,4 +51,4 @@ const BrandDescribe: React.FC<BrandDescribeProps> = ({ value, label, checked, ..
   )
 };
 
-export default BrandDescribe;
+export default BrandDescription;

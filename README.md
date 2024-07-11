@@ -1,5 +1,9 @@
 # Keoni.ai
 
+## Approach
+- Firstly, in `Which describe you?` sections, i used to use state to handle changes to make decision for next component. But is make `OnboardingForm` so long and complicated. So I use `redux` to store thoose state.
+- This redux is from the boilerplate
+
 ## Challenges faced
 ### UI
 - Build from scratch, no reusable component, color tokens exported yet

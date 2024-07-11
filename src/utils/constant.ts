@@ -11,8 +11,8 @@ export enum BrandDescriptionValue {
 }
 
 export const BrandDescriptions = {
-  [BrandDescriptionValue.QUICK_START]: {
-    value: BrandDescriptionValue.QUICK_START,
+  [BrandDescriptionValue.KEONI_DESCRIBE]: {
+    value: BrandDescriptionValue.KEONI_DESCRIBE,
     label:
       "Let Keoni extract your brand voice from files, published work or URLs",
   },
@@ -20,9 +20,9 @@ export const BrandDescriptions = {
     value: BrandDescriptionValue.SELF_DESCRIBE,
     label: "Describe your brand voice to Keoni",
   },
-  [BrandDescriptionValue.KEONI_DESCRIBE]: {
-    value: BrandDescriptionValue.KEONI_DESCRIBE,
+  [BrandDescriptionValue.QUICK_START]: {
+    value: BrandDescriptionValue.QUICK_START,
     label:
-      "Let Keoni extract your brand voice from files, published work or URLs",
+      "Quick Start from our templates",
   },
 };
