@@ -8,6 +8,7 @@ import Layer5 from '../../../../assets/Layer_1-4.svg?react';
 import Layer6 from '../../../../assets/Layer_1-2.svg?react';
 import { Grid, ImageList, styled } from "@mui/material";
 import AvatarOption from "./AvatarOption";
+import AvatarUploader from "./AvatarUploader";
 
 const avatars = [
   {
@@ -38,7 +39,7 @@ const avatars = [
 
 const StyledImageList = styled(ImageList)(({
   overflow: 'hidden',
-  margin: "1rem 0",
+  margin: "0",
 }));
 
 const ChooseBrandVoiceAvatar: React.FC = () => {
@@ -46,10 +47,13 @@ const ChooseBrandVoiceAvatar: React.FC = () => {
     <Grid container>
       <Grid item sm={12} md={6}>
         <StyledImageList cols={3} gap={4}>
-          {avatars.map(({Component, value}, index) => (
+          {avatars.map(({ Component, value }, index) => (
             <AvatarOption value={value} key={index} Avatar={Component} />
           ))}
         </StyledImageList>
+      </Grid>
+      <Grid item sm={12} md={6}>
+        <AvatarUploader />
       </Grid>
     </Grid>
   );

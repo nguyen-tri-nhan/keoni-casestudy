@@ -7,7 +7,7 @@ const Onboarding: React.FC = () => {
   const { username, estimatedTime, steps } = OnboardingPage;
   return (
     <Grid container justifyContent="center" marginTop="1.875rem">
-      <Grid item xs={12} md={12} lg={6}>
+      <Grid item xs={12} lg={6} xl={4}>
         <Typography variant="h1">
           Welcome onboard, {username}!
         </Typography>

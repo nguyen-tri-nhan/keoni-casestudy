@@ -12,5 +12,6 @@ export const Color = {
     primary: "#8F47FF",
     background: "#F1ECFE",
     disable: "#D4BBF7",
+    primarya5: "#8F47FF0D",
   }
 };

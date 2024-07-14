@@ -8,6 +8,7 @@ const BrandVoiceName: React.FC = () => {
     borderTop: `5px solid ${Color.grayScale[20]}`,
     paddingTop: '1.5625rem',
     marginTop: '1.5625rem',
+    marginBottom: '1.5625rem',
   }));
 
   return (
@@ -25,7 +26,6 @@ const BrandVoiceName: React.FC = () => {
         Choose avatar
       </Typography>
       <ChooseBrandVoiceAvatar />
-
     </Container>
   );
 };

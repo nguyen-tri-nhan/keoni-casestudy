@@ -22,8 +22,11 @@ const BrandDescription: React.FC<BrandDescribeProps> = ({ value, label, checked,
     ":not(:last-child)": {
       marginRight: "10px",
     },
-    maxWidth: "14vw",
+    maxWidth: "9vw",
     [theme.breakpoints.down("lg")]: {
+      maxWidth: "30vw",
+    },
+    [theme.breakpoints.down("md")]: {
       maxWidth: "100vw",
     },
   }));

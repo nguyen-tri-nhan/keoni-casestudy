@@ -37,7 +37,13 @@ const theme = createTheme({
       fontWeight: 400,
       lineHeight: "1.3125rem",
       color: Color.grayScale[60],
-    }
+    },
+    caption: {
+      fontSize: '0.875rem',
+      fontWeight: 400,
+      lineHeight: "1.3125rem",
+      color: Color.keoni.primary,
+    },
   },
   components: {
     MuiButton: {
@@ -59,6 +65,13 @@ const theme = createTheme({
             color: Color.grayScale[60],
             fontWeight: 600,
             textTransform: 'none',
+          }),
+          ...(ownerState.variant === 'outlined' &&
+            ownerState.color === 'primary' && {
+            color: Color.keoni.primary,
+            fontWeight: 600,
+            textTransform: 'none',
+            borderColor: Color.keoni.primary,
           }),
         }),
       },
