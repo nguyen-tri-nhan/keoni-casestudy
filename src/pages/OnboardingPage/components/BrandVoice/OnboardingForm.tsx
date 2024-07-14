@@ -1,4 +1,4 @@
-import { Button, Typography } from "@mui/material";
+import { Button, Tooltip, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 import { selectBrandDescription } from "../../../../slice/selectors";
 import BrandDescriptionsComponent from "./BrandDecriptions";
@@ -31,9 +31,11 @@ const OnboardingForm: React.FC = () => {
       <Button disabled fullWidth type="submit" variant="contained" color="primary">
         Save & Next
       </Button>
-      <Button fullWidth color="secondary">
-        Skip for now
-      </Button>
+      <Tooltip arrow title="You can always adjust this later in the configure screen">
+        <Button fullWidth color="secondary">
+          Skip for now
+        </Button>
+      </Tooltip>
     </form>
   );
 };

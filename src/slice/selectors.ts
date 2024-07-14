@@ -9,3 +9,8 @@ export const selectBrandDescription = createSelector(
   [selectSlice],
   state => state.brandDescription,
 );
+
+export const selectSelectedAvatar = createSelector(
+  [selectSlice],
+  state => state.selectedAvatar,
+);
