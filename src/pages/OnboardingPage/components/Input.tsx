@@ -5,14 +5,14 @@ import {
 } from "@mui/material";
 import { Color } from "../../../utils/token";
 
-type InputProps = InputBaseProps & {
+export type InputProps = InputBaseProps & {
   startAdornment?: React.ReactNode;
 };
 
 const Input: React.FC<InputProps> = ({ startAdornment, ...props }) => {
 
   const StyledInput = styled(InputBase)(({
-    marginLeft: 1,
+    marginLeft: 2,
     width: '100%',
     fontSize: '0.875rem',
   }));

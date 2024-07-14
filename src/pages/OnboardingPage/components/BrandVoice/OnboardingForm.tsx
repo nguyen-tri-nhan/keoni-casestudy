@@ -1,6 +1,6 @@
 import { Button, Tooltip, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
-import { selectBrandDescription } from "../../../../slice/selectors";
+import { selectBrandDescription, selectBrandVoiceName } from "../../../../slice/selectors";
 import BrandDescriptionsComponent from "./BrandDecriptions";
 import { BrandDescriptionValue } from "../../../../utils/constant";
 import KeoniDescribe from "./KeoniDescribe";
@@ -17,6 +17,7 @@ const brandDescriptionContent = {
 const OnboardingForm: React.FC = () => {
 
   const brandDescription = useSelector(selectBrandDescription);
+  const brandVoiceName = useSelector(selectBrandVoiceName);
 
   return (
     <form>
@@ -28,7 +29,7 @@ const OnboardingForm: React.FC = () => {
       {brandDescription !== BrandDescriptionValue.QUICK_START && (
         <BrandVoiceName />
       )}
-      <Button disabled fullWidth type="submit" variant="contained" color="primary">
+      <Button disabled={!brandVoiceName} fullWidth type="submit" variant="contained" color="primary">
         Save & Next
       </Button>
       <Tooltip arrow title="You can always adjust this later in the configure screen">

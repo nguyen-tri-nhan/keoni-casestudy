@@ -14,3 +14,8 @@ export const selectSelectedAvatar = createSelector(
   [selectSlice],
   state => state.selectedAvatar,
 );
+
+export const selectBrandVoiceName = createSelector(
+  [selectSlice],
+  state => state.brandVoiceName,
+);

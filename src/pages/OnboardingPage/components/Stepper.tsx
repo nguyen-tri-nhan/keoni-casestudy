@@ -16,7 +16,7 @@ type StepperProps = {
 };
 
 
-const StepperRoot = styled(MuiStepper)({
+const StepperRoot = styled(MuiStepper)(({ theme }) => ({
   padding: '25px 0',
   [`& :not(.${stepConnectorClasses.disabled})`]: {
     [`& .${stepConnectorClasses.line}`]: {
@@ -35,9 +35,12 @@ const StepperRoot = styled(MuiStepper)({
     },
     [`& .${stepLabelClasses.label}`]: {
       marginLeft: "1rem",
+      [theme.breakpoints.up('lg')]: {
+        marginLeft: 0,
+      },
     },
   },
-});
+}));
 
 const Stepper: React.FC<StepperProps> = ({ activeStep, steps }: StepperProps) => {
   return (

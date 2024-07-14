@@ -10,7 +10,7 @@
 
 ### Design
 #### Missing behavior
-- In `Which describe you` label, first page have info tooltip but other page not. No provide tooltip text.
+- In `Which describe you` label, first page have info tooltip but other page not. No provide tooltip text. (The designer allowed me to ignore it <3.)
 
 - In Radio button, not given what happens if user click to the container. I code as the presentation page provided.
 

@@ -7,6 +7,7 @@ import { useInjectReducer } from 'redux-injectors';
 export const initialState: AppState = {
   brandDescription: BrandDescriptionValue.KEONI_DESCRIBE,
   selectedAvatar: 'Layer1',
+  brandVoiceName: '',
 };
 
 const slice = createSlice({
@@ -18,7 +19,10 @@ const slice = createSlice({
     },
     setSelectedAvatar(state, action: PayloadAction<string>) {
       state.selectedAvatar = action.payload;
-    }
+    },
+    setBrandVoiceName(state, action: PayloadAction<string>) {
+      state.brandVoiceName = action.payload;
+    },
   },
 });
 
