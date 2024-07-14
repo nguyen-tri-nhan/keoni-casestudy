@@ -6,7 +6,10 @@
 
 ## Challenges faced
 ### UI
-- Build from scratch, no reusable component, color tokens exported yet
+- Build from scratch, no reusable component, color tokens exported yet.
+- Take time to explore design, some component make developers confused. --> I have added comment in Figma and have response from designer (Respected ++).
+- I have challenged myself to finish this test in my 8 hours actively. So this is all of my commision include devops and deployment.
+- Which component I have not implemented yet, I mark it comming soon.
 
 ### Design
 #### Missing behavior
